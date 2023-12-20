@@ -55,3 +55,6 @@ dkms.conf
 .idea
 .DS_Store
 .vscode
+
+# Qt Creator debug
+build-smartCalc-Qt_6_6_1_for_macOS-Debug
