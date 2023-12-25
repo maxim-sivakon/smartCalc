@@ -10,13 +10,13 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
-    smartcalcfront.cpp
+    smartcalc.cpp
 
 HEADERS += \
-    smartcalcfront.h
+    smartcalc.h
 
 FORMS += \
-    smartcalcfront.ui
+    smartcalc.ui
 
 TRANSLATIONS += \
     smartCalc_ru_RU.ts
@@ -27,3 +27,6 @@ CONFIG += embed_translations
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    icon.qrc
