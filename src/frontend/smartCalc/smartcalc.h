@@ -19,5 +19,9 @@ public:
 
 private:
     Ui::smartCalc *ui;
+
+private slots:
+    void digits_btn_numbers();
+    void on_btn_char_dot_clicked();
 };
 #endif // SMARTCALC_H
