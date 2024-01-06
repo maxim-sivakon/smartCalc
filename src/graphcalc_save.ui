@@ -27,28 +27,28 @@
    </property>
    <property name="styleSheet">
     <string notr="true">
-     QLineEdit{
-     background: #ffffff;
-     border: 2px solid #F7F8FB;
-     color: #424242;
-     border-radius: 16px;
-     font-size: 26px;
-     font-weight: 600;
-     padding-left: 15px;
-     padding-right: 15px;
-     }
+QLineEdit{
+background: #ffffff;
+border: 2px solid #F7F8FB;
+color: #424242;
+border-radius: 16px;
+font-size: 26px;
+font-weight: 600;
+padding-left: 15px;
+padding-right: 15px;
+}
 
 
-     QLineEdit::hover{
-     background: #FCFCFE;
-     }
+QLineEdit::hover{
+	background: #FCFCFE;
+}
 
-     QLineEdit:pressed{
-     background: #EFF7FF;
-     }
+QLineEdit:pressed{
+	background: #EFF7FF;
+}
 
 
-    </string>
+</string>
    </property>
    <property name="inputMethodHints">
     <set>Qt::ImhPreferNumbers</set>
@@ -91,28 +91,28 @@
    </property>
    <property name="styleSheet">
     <string notr="true">
-     QLineEdit{
-     background: #ffffff;
-     border: 2px solid #F7F8FB;
-     color: #424242;
-     border-radius: 16px;
-     font-size: 26px;
-     font-weight: 600;
-     padding-left: 15px;
-     padding-right: 15px;
-     }
+QLineEdit{
+background: #ffffff;
+border: 2px solid #F7F8FB;
+color: #424242;
+border-radius: 16px;
+font-size: 26px;
+font-weight: 600;
+padding-left: 15px;
+padding-right: 15px;
+}
 
 
-     QLineEdit::hover{
-     background: #FCFCFE;
-     }
+QLineEdit::hover{
+	background: #FCFCFE;
+}
 
-     QLineEdit:pressed{
-     background: #EFF7FF;
-     }
+QLineEdit:pressed{
+	background: #EFF7FF;
+}
 
 
-    </string>
+</string>
    </property>
    <property name="inputMethodHints">
     <set>Qt::ImhPreferNumbers</set>
@@ -142,28 +142,28 @@
    </property>
    <property name="styleSheet">
     <string notr="true">
-     QLineEdit{
-     background: #ffffff;
-     border: 2px solid #F7F8FB;
-     color: #424242;
-     border-radius: 16px;
-     font-size: 26px;
-     font-weight: 600;
-     padding-left: 15px;
-     padding-right: 15px;
-     }
+QLineEdit{
+background: #ffffff;
+border: 2px solid #F7F8FB;
+color: #424242;
+border-radius: 16px;
+font-size: 26px;
+font-weight: 600;
+padding-left: 15px;
+padding-right: 15px;
+}
 
 
-     QLineEdit::hover{
-     background: #FCFCFE;
-     }
+QLineEdit::hover{
+	background: #FCFCFE;
+}
 
-     QLineEdit:pressed{
-     background: #EFF7FF;
-     }
+QLineEdit:pressed{
+	background: #EFF7FF;
+}
 
 
-    </string>
+</string>
    </property>
    <property name="inputMethodHints">
     <set>Qt::ImhPreferNumbers</set>
@@ -193,28 +193,28 @@
    </property>
    <property name="styleSheet">
     <string notr="true">
-     QLineEdit{
-     background: #ffffff;
-     border: 2px solid #F7F8FB;
-     color: #424242;
-     border-radius: 16px;
-     font-size: 26px;
-     font-weight: 600;
-     padding-left: 15px;
-     padding-right: 15px;
-     }
+QLineEdit{
+background: #ffffff;
+border: 2px solid #F7F8FB;
+color: #424242;
+border-radius: 16px;
+font-size: 26px;
+font-weight: 600;
+padding-left: 15px;
+padding-right: 15px;
+}
 
 
-     QLineEdit::hover{
-     background: #FCFCFE;
-     }
+QLineEdit::hover{
+	background: #FCFCFE;
+}
 
-     QLineEdit:pressed{
-     background: #EFF7FF;
-     }
+QLineEdit:pressed{
+	background: #EFF7FF;
+}
 
 
-    </string>
+</string>
    </property>
    <property name="inputMethodHints">
     <set>Qt::ImhPreferNumbers</set>
@@ -234,20 +234,20 @@
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton{
-     background: #ffffff;
-     color: #7CC9FF;
-     border-radius: 16px;
-     font-size: 18px;
-     font-weight: 600;
-     }
+background: #ffffff;
+color: #7CC9FF;
+border-radius: 16px;
+font-size: 18px;
+font-weight: 600;
+}
 
-     QPushButton::hover{
-     background: #FCFCFC;
-     }
+QPushButton::hover{
+	background: #FCFCFC;
+}
 
-     QPushButton:pressed{
-     background: #EFF7FF;
-     }</string>
+QPushButton:pressed{
+	background: #EFF7FF;
+}</string>
    </property>
    <property name="text">
     <string>draw</string>

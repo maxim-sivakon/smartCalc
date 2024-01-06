@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     graphcalc.cpp \
     lib/polishNotation.c \
+    lib/qcustomplot.cpp \
     lib/stack.c \
     main.cpp \
     smartcalc.cpp
@@ -18,6 +19,7 @@ SOURCES += \
 HEADERS += \
     graphcalc.h \
     lib/polishNotation.h \
+    lib/qcustomplot.h \
     lib/stack.h \
     smartcalc.h
 

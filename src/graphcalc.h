@@ -2,6 +2,7 @@
 #define GRAPHCALC_H
 
 #include <QDialog>
+#include <QIntValidator>
 
 namespace Ui {
 class graphcalc;
@@ -17,6 +18,10 @@ public:
 
 private:
     Ui::graphcalc *ui;
+
+private slots:
+    void drawGraph();
+    void setValidators();
 };
 
 #endif // GRAPHCALC_H
