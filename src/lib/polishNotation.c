@@ -185,12 +185,135 @@ int infixToPostfix(const char *expression, char *postfixExpression){
 
 int processPostfix(char *expression, double x, double *result){
     Stack stack;
-    createStack($stack);
+    createStack(&stack);
 
     int ii = 0;
     int error = 0;
 
     while (expression[ii] != '\0' && !error) {
+        if (isdigit(expression[ii])) {
+
+            char number[255] = {'\0'};
+            int kk = 0;
+
+            while(isdigit(expression[ii]) || expression[ii] == '.'){
+                number[kk++] = expression[ii++];
+            }
+            pushDouble(&stack, atof(number));
+            ii--;
+
+        } else if(expression[ii] == 'x' && !isnan(x)){
+            pushDouble(&stack, x);
+        } else if(checkingOperator(expression[ii])){
+            double secondNumber;
+
+            if(isEmpty(&stack)){
+                error = 1;
+            } else {
+                switch (expression[ii]) {
+                    case '+':
+                        secondNumber = popDouble(&stack);
+                        if (!isEmpty(&stack)) {
+                            pushDouble(&stack, (popDouble(&stack) + secondNumber));
+                        } else {
+                            error = 1;
+                        }
+                        break;
+                    case '-':
+                        secondNumber = popDouble(&stack);
+                        if (!isEmpty(&stack)) {
+                            pushDouble(&stack, (popDouble(&stack) - secondNumber));
+                        } else {
+                            error = 1;
+                        }
+                        break;
+                    case '*':
+                        secondNumber = popDouble(&stack);
+                        if (!isEmpty(&stack)) {
+                            pushDouble(&stack, (popDouble(&stack) * secondNumber));
+                        } else {
+                            error = 1;
+                        }
+                        break;
+                    case '/':
+                        secondNumber = popDouble(&stack);
+                        double epsilon = 0.0000001;
+
+                        if (!isEmpty(&stack) && !(fabs(secondNumber) < epsilon)) {
+                            pushDouble(&stack, (popDouble(&stack) / secondNumber));
+                        } else {
+                            error = 1;
+                        }
+                        break;
+                    case '^':
+                        secondNumber = popDouble(&stack);
+                        if (!isEmpty(&stack)) {
+                            pushDouble(&stack, pow(popDouble(&stack), secondNumber));
+                        } else {
+                            error = 1;
+                        }
+                        break;
+                    case '%':
+                        secondNumber = popDouble(&stack);
+                        if (!isEmpty(&stack)) {
+                            pushDouble(&stack, fmod(popDouble(&stack), secondNumber));
+                        } else {
+                            error = 1;
+                        }
+                        break;
+                }
+            }
+
+        } else if(checkingFunction(expression[ii])){
+            if(isEmpty(&stack)){
+                error = 1;
+            } else{
+                switch (expression[ii]) {
+                    case 's':
+                        pushDouble(&stack, sin(popDouble(&stack)));
+                        break;
+                    case 'c':
+                        pushDouble(&stack, cos(popDouble(&stack)));
+                        break;
+                    case 't':
+                        pushDouble(&stack, tan(popDouble(&stack)));
+                        break;
+                    case 'S':
+                        pushDouble(&stack, asin(popDouble(&stack)));
+                        break;
+                    case 'C':
+                        pushDouble(&stack, acos(popDouble(&stack)));
+                        break;
+                    case 'T':
+                        pushDouble(&stack, atan(popDouble(&stack)));
+                        break;
+                    case 'q':
+                        pushDouble(&stack, sqrt(popDouble(&stack)));
+                        break;
+                    case 'l':
+                        pushDouble(&stack, log(popDouble(&stack)));
+                        break;
+                    case 'L':
+                        pushDouble(&stack, log10(popDouble(&stack)));
+                    default:
+                        break;
+                }
+            }
+        } else if(expression[ii] == '~'){
+            if(!isEmpty(&stack)){
+                pushDouble(&stack, 0 - popDouble(&stack));
+            } else {
+                error = 1;
+            }
+        } else if(expression[ii] == '#'){
+            if(!isEmpty(&stack)){
+                pushDouble(&stack, popDouble(&stack));
+            } else {
+                error = 1;
+            }
+        }
+
+        ii++;
 
     }
 

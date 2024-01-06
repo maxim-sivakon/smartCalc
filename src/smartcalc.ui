@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>404</width>
-    <height>628</height>
+    <height>620</height>
    </rect>
   </property>
   <property name="contextMenuPolicy">
@@ -1101,7 +1101,7 @@ QPushButton:pressed{
      <string>x</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="input_additional">
+   <widget class="QLineEdit" name="input_additional_x">
     <property name="geometry">
      <rect>
       <x>170</x>

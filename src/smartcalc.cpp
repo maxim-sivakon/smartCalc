@@ -125,10 +125,28 @@ void smartCalc::equalls(){
 
     QByteArray byteArray = expression.toLocal8Bit();
     char *infix = byteArray.data();
-    char *postfix;
+    char *postfix = (char *)malloc(MAX_SIZE * sizeof(char));
     int code = 0;
     code = infixToPostfix(infix, postfix);
 
+    if (!code) {
+        double result;
 
+        if (ui->input_additional_x->text().isEmpty()) {
+            code = processPostfix(postfix, NAN, &result);
+        } else {
+            code =
+                processPostfix(postfix, ui->input_additional_x->text().toDouble(), &result);
+        }
 
+        if (!code) {
+            ui->input_result->setText(QString::number(result, 'g', 15));
+        } else {
+            ui->input_result->setText("ERROR");
+        }
+    } else {
+        ui->input_result->setText("ERROR");
+    }
+
+    free(postfix);
 }
