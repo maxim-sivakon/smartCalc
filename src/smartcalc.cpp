@@ -56,6 +56,7 @@ smartCalc::smartCalc(QWidget *parent)
     connect(ui->action_open_baseCalc, SIGNAL(triggered()), this, SLOT(openBaseCalc()));
     connect(ui->action_open_depositCalc, SIGNAL(triggered()), this, SLOT(openDepositCalc()));
     connect(ui->action_open_creditCalc, SIGNAL(triggered()), this, SLOT(openCreditCalc()));
+    connect(ui->action_open_graphCalc, SIGNAL(triggered()), this, SLOT(openGraphCalc()));
 }
 
 smartCalc::~smartCalc()
@@ -77,6 +78,12 @@ void smartCalc::openDepositCalc(){
 
 void smartCalc::openCreditCalc(){
     ui->statusBar->showMessage("open Credit Calc");
+}
+
+void smartCalc::openGraphCalc(){
+    graphcalc graphcalc;
+    graphcalc.setModal(true);
+    graphcalc.exec();
 }
 
 void smartCalc::takeSymbols(){

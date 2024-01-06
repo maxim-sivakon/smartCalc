@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>graphcalc</class>
+ <widget class="QDialog" name="graphcalc">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>669</width>
+    <height>509</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background: #F7F8FB;</string>
+  </property>
+  <widget class="QGraphicsView" name="graphicsView">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>80</y>
+     <width>671</width>
+     <height>431</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="input_additional_x">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>30</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QLineEdit{
+background: #ffffff;
+border: 2px solid #F7F8FB;
+color: #424242;
+border-radius: 16px;
+font-size: 26px;
+font-weight: 600;
+padding-left: 15px;
+padding-right: 15px;
+}
+
+
+QLineEdit::hover{
+	background: #FCFCFE;
+}
+
+QLineEdit:pressed{
+	background: #EFF7FF;
+}
+
+
+</string>
+   </property>
+   <property name="inputMethodHints">
+    <set>Qt::ImhPreferNumbers</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>58</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Max: X</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>10</y>
+     <width>58</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Min: X</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="input_additional_x_2">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>30</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QLineEdit{
+background: #ffffff;
+border: 2px solid #F7F8FB;
+color: #424242;
+border-radius: 16px;
+font-size: 26px;
+font-weight: 600;
+padding-left: 15px;
+padding-right: 15px;
+}
+
+
+QLineEdit::hover{
+	background: #FCFCFE;
+}
+
+QLineEdit:pressed{
+	background: #EFF7FF;
+}
+
+
+</string>
+   </property>
+   <property name="inputMethodHints">
+    <set>Qt::ImhPreferNumbers</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>10</y>
+     <width>58</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Min: Y</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="input_additional_x_3">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>30</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QLineEdit{
+background: #ffffff;
+border: 2px solid #F7F8FB;
+color: #424242;
+border-radius: 16px;
+font-size: 26px;
+font-weight: 600;
+padding-left: 15px;
+padding-right: 15px;
+}
+
+
+QLineEdit::hover{
+	background: #FCFCFE;
+}
+
+QLineEdit:pressed{
+	background: #EFF7FF;
+}
+
+
+</string>
+   </property>
+   <property name="inputMethodHints">
+    <set>Qt::ImhPreferNumbers</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>10</y>
+     <width>58</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Max: Y</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="input_additional_x_4">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>30</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QLineEdit{
+background: #ffffff;
+border: 2px solid #F7F8FB;
+color: #424242;
+border-radius: 16px;
+font-size: 26px;
+font-weight: 600;
+padding-left: 15px;
+padding-right: 15px;
+}
+
+
+QLineEdit::hover{
+	background: #FCFCFE;
+}
+
+QLineEdit:pressed{
+	background: #EFF7FF;
+}
+
+
+</string>
+   </property>
+   <property name="inputMethodHints">
+    <set>Qt::ImhPreferNumbers</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_action_log">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>30</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+background: #ffffff;
+color: #7CC9FF;
+border-radius: 16px;
+font-size: 18px;
+font-weight: 600;
+}
+
+QPushButton::hover{
+	background: #FCFCFC;
+}
+
+QPushButton:pressed{
+	background: #EFF7FF;
+}</string>
+   </property>
+   <property name="text">
+    <string>draw</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -9,17 +9,20 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    graphcalc.cpp \
     lib/polishNotation.c \
     lib/stack.c \
     main.cpp \
     smartcalc.cpp
 
 HEADERS += \
+    graphcalc.h \
     lib/polishNotation.h \
     lib/stack.h \
     smartcalc.h
 
 FORMS += \
+    graphcalc.ui \
     smartcalc.ui
 
 TRANSLATIONS += \

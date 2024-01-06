@@ -2,6 +2,7 @@
 #define SMARTCALC_H
 
 #include <QMainWindow>
+#include <graphcalc.h>
 
 extern "C" {
     #include "lib/polishNotation.h"
@@ -39,5 +40,6 @@ private slots:
     void openBaseCalc();
     void openDepositCalc();
     void openCreditCalc();
+    void openGraphCalc();
 };
 #endif // SMARTCALC_H

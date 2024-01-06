@@ -1232,8 +1232,15 @@ QPushButton:pressed{
     <addaction name="action_open_depositCalc"/>
     <addaction name="separator"/>
    </widget>
+   <widget class="QMenu" name="menuAdditional">
+    <property name="title">
+     <string>Additional</string>
+    </property>
+    <addaction name="action_open_graphCalc"/>
+   </widget>
    <addaction name="menu"/>
    <addaction name="menuView"/>
+   <addaction name="menuAdditional"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="action_close_program">
@@ -1254,6 +1261,11 @@ QPushButton:pressed{
   <action name="action_open_depositCalc">
    <property name="text">
     <string>Deposit</string>
+   </property>
+  </action>
+  <action name="action_open_graphCalc">
+   <property name="text">
+    <string>Graph</string>
    </property>
   </action>
  </widget>
