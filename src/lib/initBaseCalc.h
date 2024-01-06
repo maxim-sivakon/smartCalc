@@ -1,4 +1,0 @@
-#ifndef INITBASECALC_H
-#define INITBASECALC_H
-
-#endif // INITBASECALC_H

@@ -50,11 +50,33 @@ smartCalc::smartCalc(QWidget *parent)
 
     // method equalls()
     connect(ui->btn_action_equally, SIGNAL(clicked()), this, SLOT(equalls()));
+
+    // top menu contecst
+    connect(ui->action_close_program, SIGNAL(triggered()), this, SLOT(closeProgram()));
+    connect(ui->action_open_baseCalc, SIGNAL(triggered()), this, SLOT(openBaseCalc()));
+    connect(ui->action_open_depositCalc, SIGNAL(triggered()), this, SLOT(openDepositCalc()));
+    connect(ui->action_open_creditCalc, SIGNAL(triggered()), this, SLOT(openCreditCalc()));
 }
 
 smartCalc::~smartCalc()
 {
     delete ui;
+}
+
+void smartCalc::closeProgram(){
+    QApplication::quit();
+}
+
+void smartCalc::openBaseCalc(){
+    ui->statusBar->showMessage("open Base Calc");
+}
+
+void smartCalc::openDepositCalc(){
+    ui->statusBar->showMessage("open Deposit Calc");
+}
+
+void smartCalc::openCreditCalc(){
+    ui->statusBar->showMessage("open Credit Calc");
 }
 
 void smartCalc::takeSymbols(){
@@ -100,5 +122,13 @@ void smartCalc::equalls(){
     if(expression.isEmpty()){
         return;
     }
+
+    QByteArray byteArray = expression.toLocal8Bit();
+    char *infix = byteArray.data();
+    char *postfix;
+    int code = 0;
+    code = infixToPostfix(infix, postfix);
+
+
 
 }

@@ -10,21 +10,45 @@
     <x>0</x>
     <y>0</y>
     <width>404</width>
-    <height>645</height>
+    <height>628</height>
    </rect>
   </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::NoContextMenu</enum>
+  </property>
+  <property name="acceptDrops">
+   <bool>false</bool>
+  </property>
   <property name="windowTitle">
-   <string>smartCalc</string>
+   <string notr="true">smartCalc</string>
   </property>
   <property name="windowIcon">
    <iconset resource="icon.qrc">
     <normaloff>:/new/prefix1/calculator.png</normaloff>:/new/prefix1/calculator.png</iconset>
   </property>
+  <property name="toolTip">
+   <string notr="true"/>
+  </property>
+  <property name="statusTip">
+   <string notr="true"/>
+  </property>
+  <property name="whatsThis">
+   <string notr="true"/>
+  </property>
+  <property name="accessibleDescription">
+   <string notr="true"/>
+  </property>
   <property name="styleSheet">
    <string notr="true">background: #F7F8FB;</string>
   </property>
+  <property name="windowFilePath">
+   <string notr="true"/>
+  </property>
   <property name="tabShape">
    <enum>QTabWidget::Rounded</enum>
+  </property>
+  <property name="dockOptions">
+   <set>QMainWindow::AllowTabbedDocks|QMainWindow::AnimatedDocks</set>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="btn_action_deleteAllChar">
@@ -1193,8 +1217,45 @@ QPushButton:pressed{
      <height>43</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="action_close_program"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <addaction name="action_open_baseCalc"/>
+    <addaction name="action_open_creditCalc"/>
+    <addaction name="action_open_depositCalc"/>
+    <addaction name="separator"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menuView"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="action_close_program">
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </action>
+  <action name="action_open_baseCalc">
+   <property name="text">
+    <string>Basic</string>
+   </property>
+  </action>
+  <action name="action_open_creditCalc">
+   <property name="text">
+    <string>Credit</string>
+   </property>
+  </action>
+  <action name="action_open_depositCalc">
+   <property name="text">
+    <string>Deposit</string>
+   </property>
+  </action>
  </widget>
  <resources>
   <include location="icon.qrc"/>

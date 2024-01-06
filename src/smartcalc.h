@@ -3,6 +3,11 @@
 
 #include <QMainWindow>
 
+extern "C" {
+    #include "lib/polishNotation.h"
+    #include "lib/stack.h"
+}
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class smartCalc;
@@ -28,5 +33,11 @@ private slots:
     void trigonometricFunctions();
     void takeSymbols();
     void equalls();
+
+    // top menu contecst
+    void closeProgram();
+    void openBaseCalc();
+    void openDepositCalc();
+    void openCreditCalc();
 };
 #endif // SMARTCALC_H

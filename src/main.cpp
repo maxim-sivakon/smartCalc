@@ -4,6 +4,7 @@
 #include <QLocale>
 #include <QTranslator>
 #include <QStyleFactory>
+#include <clocale>
 
 int main(int argc, char *argv[])
 {
@@ -22,6 +23,7 @@ int main(int argc, char *argv[])
     a.setWindowIcon(QIcon(":/new/prefix1/calculator.png"));
 
     smartCalc w;
+    setlocale(LC_NUMERIC, "C");
     w.show();
     return a.exec();
 }
