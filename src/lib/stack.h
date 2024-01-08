@@ -5,10 +5,6 @@ extern "C" {
     #ifndef STACK_H
     #define STACK_H
 
-    #include <math.h>
-    #include <stdio.h>
-    #include <stdlib.h>
-
     #define MAX_SIZE 255
 
     typedef struct {

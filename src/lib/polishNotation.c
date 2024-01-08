@@ -1,5 +1,10 @@
 #include "polishNotation.h"
 
+#include <ctype.h>
+#include <math.h>
+#include <stdlib.h>
+#include <string.h>
+
 int checkingOperator(char symbol){
     return (symbol == '+' || symbol == '-' || symbol == '*' || symbol == '/' || symbol == '^' || symbol == '%');
 }

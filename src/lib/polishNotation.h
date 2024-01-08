@@ -2,12 +2,6 @@
 extern "C" {
 #endif
 
-    #include <ctype.h>
-    #include <math.h>
-    #include <stdio.h>
-    #include <stdlib.h>
-    #include <string.h>
-
     #include "stack.h"
 
     #ifndef POLISHNOTATION_H

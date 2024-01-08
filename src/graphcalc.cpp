@@ -18,6 +18,9 @@ graphcalc::~graphcalc()
 }
 
 void graphcalc::drawGraph(){
+
+    ui->widget_graph->clearGraphs();
+
     int xMin = ui->input_min_x->text().toInt();
     int xMax = ui->input_max_x->text().toInt();
     int yMin = ui->input_min_y->text().toInt();
@@ -25,6 +28,12 @@ void graphcalc::drawGraph(){
 
     ui->widget_graph->xAxis->setRange(xMin, xMax);
     ui->widget_graph->yAxis->setRange(yMin, yMax);
+
+    int ratio = 1;
+    if ((xMax - xMin) >= 20) {
+        ratio = (xMax - xMin) / 10;
+    }
+    double step = 0.1 * ratio;
 }
 
 void graphcalc::setValidators(){
