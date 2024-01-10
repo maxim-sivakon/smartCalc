@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Калькулятор SmartCalc v1.0 - Построение графика</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background: #F7F8FB;</string>

@@ -9,6 +9,8 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    creditcalc.cpp \
+    depositcalc.cpp \
     graphcalc.cpp \
     lib/polishNotation.c \
     lib/qcustomplot.cpp \
@@ -17,6 +19,8 @@ SOURCES += \
     smartcalc.cpp
 
 HEADERS += \
+    creditcalc.h \
+    depositcalc.h \
     graphcalc.h \
     lib/polishNotation.h \
     lib/qcustomplot.h \
@@ -24,6 +28,8 @@ HEADERS += \
     smartcalc.h
 
 FORMS += \
+    creditcalc.ui \
+    depositcalc.ui \
     graphcalc.ui \
     smartcalc.ui
 
