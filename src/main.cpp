@@ -24,6 +24,8 @@ int main(int argc, char *argv[])
 
     smartCalc w;
     setlocale(LC_NUMERIC, "C");
+    w.setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint | Qt::WindowSystemMenuHint);
+    w.setFixedSize(404, 620);
     w.show();
     return a.exec();
 }

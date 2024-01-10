@@ -20,7 +20,7 @@ graphcalc::~graphcalc()
 void graphcalc::drawGraph(){
 
     ui->widget_graph->clearGraphs();
-
+    QString expression = ui->expressionValue->text();
     int xMin = ui->input_min_x->text().toInt();
     int xMax = ui->input_max_x->text().toInt();
     int yMin = ui->input_min_y->text().toInt();
@@ -34,6 +34,43 @@ void graphcalc::drawGraph(){
         ratio = (xMax - xMin) / 10;
     }
     double step = 0.1 * ratio;
+    double xStart, xEnd, x;
+    QVector<double> X_values, Y_values;
+
+    xStart = ui->input_min_x->text().toDouble();
+    xEnd = ui->input_max_x->text().toDouble() + step;
+
+    for (x = xStart; x <= xEnd; x += step) {
+        double y = graphcalc::getY(expression, x);
+        if (!isnan(y)) {
+            X_values.push_back(x);
+            Y_values.push_back(y);
+        }
+    }
+
+    ui->widget_graph->addGraph();
+    ui->widget_graph->graph(0)->setData(X_values, Y_values);
+
+    ui->widget_graph->replot();
+}
+
+double graphcalc::getY(QString expression, double X) {
+
+    QByteArray bytes = expression.toLocal8Bit();
+    char *char_expression = bytes.data();
+
+    char postfixForGraph[255];
+    int error = infixToPostfix(char_expression, postfixForGraph);
+    double result = NAN;
+
+    if (!error) {
+        error = processPostfix(postfixForGraph, X, &result);
+        if (error) {
+            result = NAN;
+        }
+    }
+
+    return result;
 }
 
 void graphcalc::setValidators(){

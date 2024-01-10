@@ -1,5 +1,9 @@
 #include "smartcalc.h"
 #include "ui_smartcalc.h"
+#include <QApplication>
+#include <QLocale>
+#include <QTranslator>
+#include <QStyleFactory>
 
 smartCalc::smartCalc(QWidget *parent)
     : QMainWindow(parent)
@@ -132,8 +136,9 @@ void smartCalc::equalls(){
 
     QByteArray byteArray = expression.toLocal8Bit();
     char *infix = byteArray.data();
-    char *postfix = (char *)malloc(MAX_SIZE * sizeof(char));
+    char postfix[255];
     int code = 0;
+
     code = infixToPostfix(infix, postfix);
 
     if (!code) {
@@ -142,8 +147,7 @@ void smartCalc::equalls(){
         if (ui->input_additional_x->text().isEmpty()) {
             code = processPostfix(postfix, NAN, &result);
         } else {
-            code =
-                processPostfix(postfix, ui->input_additional_x->text().toDouble(), &result);
+            code = processPostfix(postfix, ui->input_additional_x->text().toDouble(), &result);
         }
 
         if (!code) {
@@ -154,6 +158,5 @@ void smartCalc::equalls(){
     } else {
         ui->input_result->setText("ERROR");
     }
-
-    free(postfix);
 }
+

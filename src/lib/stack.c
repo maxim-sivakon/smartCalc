@@ -25,6 +25,7 @@ void pushDouble(Stack *stack, double number) {
         stack->data[stack->top] = number;
     }
 }
+
 char popChar(Stack *stack) {
     char symbol = 0;
     if (!isEmpty(stack)) {

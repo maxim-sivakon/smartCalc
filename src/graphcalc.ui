@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>669</width>
-    <height>509</height>
+    <height>571</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>30</y>
+     <y>90</y>
      <width>131</width>
      <height>41</height>
     </rect>
@@ -53,12 +53,15 @@
    <property name="inputMethodHints">
     <set>Qt::ImhPreferNumbers</set>
    </property>
+   <property name="placeholderText">
+    <string/>
+   </property>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>10</y>
+     <y>70</y>
      <width>58</width>
      <height>16</height>
     </rect>
@@ -71,7 +74,7 @@
    <property name="geometry">
     <rect>
      <x>150</x>
-     <y>10</y>
+     <y>70</y>
      <width>58</width>
      <height>16</height>
     </rect>
@@ -84,7 +87,7 @@
    <property name="geometry">
     <rect>
      <x>140</x>
-     <y>30</y>
+     <y>90</y>
      <width>131</width>
      <height>41</height>
     </rect>
@@ -122,7 +125,7 @@
    <property name="geometry">
     <rect>
      <x>430</x>
-     <y>10</y>
+     <y>70</y>
      <width>58</width>
      <height>16</height>
     </rect>
@@ -135,7 +138,7 @@
    <property name="geometry">
     <rect>
      <x>420</x>
-     <y>30</y>
+     <y>90</y>
      <width>131</width>
      <height>41</height>
     </rect>
@@ -173,7 +176,7 @@
    <property name="geometry">
     <rect>
      <x>290</x>
-     <y>10</y>
+     <y>70</y>
      <width>58</width>
      <height>16</height>
     </rect>
@@ -186,7 +189,7 @@
    <property name="geometry">
     <rect>
      <x>280</x>
-     <y>30</y>
+     <y>90</y>
      <width>131</width>
      <height>41</height>
     </rect>
@@ -224,7 +227,7 @@
    <property name="geometry">
     <rect>
      <x>560</x>
-     <y>30</y>
+     <y>90</y>
      <width>111</width>
      <height>41</height>
     </rect>
@@ -257,13 +260,115 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>79</y>
+     <y>140</y>
      <width>671</width>
      <height>431</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>0</y>
+     <width>101</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Выражение:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="expressionValue">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>20</y>
+     <width>411</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+     QLineEdit{
+     background: #ffffff;
+     border: 2px solid #F7F8FB;
+     color: #424242;
+     border-radius: 16px;
+     font-size: 26px;
+     font-weight: 600;
+     padding-left: 15px;
+     padding-right: 15px;
+     }
+
+
+     QLineEdit::hover{
+     background: #FCFCFE;
+     }
+
+     QLineEdit:pressed{
+     background: #EFF7FF;
+     }
+
+
+    </string>
+   </property>
+   <property name="inputMethodHints">
+    <set>Qt::ImhPreferNumbers</set>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="xValue">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>20</y>
+     <width>251</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+     QLineEdit{
+     background: #ffffff;
+     border: 2px solid #F7F8FB;
+     color: #424242;
+     border-radius: 16px;
+     font-size: 26px;
+     font-weight: 600;
+     padding-left: 15px;
+     padding-right: 15px;
+     }
+
+
+     QLineEdit::hover{
+     background: #FCFCFE;
+     }
+
+     QLineEdit:pressed{
+     background: #EFF7FF;
+     }
+
+
+    </string>
+   </property>
+   <property name="inputMethodHints">
+    <set>Qt::ImhPreferNumbers</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>0</y>
+     <width>101</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>X:</string>
    </property>
   </widget>
  </widget>

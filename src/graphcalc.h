@@ -4,6 +4,11 @@
 #include <QDialog>
 #include <QIntValidator>
 
+extern "C" {
+#include "lib/polishNotation.h"
+#include "lib/stack.h"
+}
+
 namespace Ui {
 class graphcalc;
 }
@@ -22,6 +27,7 @@ private:
 private slots:
     void drawGraph();
     void setValidators();
+    double getY(QString expression, double X);
 };
 
 #endif // GRAPHCALC_H
