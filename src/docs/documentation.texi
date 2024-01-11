@@ -5,7 +5,7 @@
 
 @ifinfo
 @copying
-Copyright © 2023 maximins
+Copyright © 2023 gylbertk
 @end ifinfo
 
 @titlepage
@@ -94,4 +94,5 @@ You just need to input:@*
 7) replenishments and partial withdrawals list@*
 7) start date@*
 
-And you will have the result output: accrued interest, tax amount, deposit amount by the end of the term
+And you will have the result output: accrued interest, tax amount, deposit amount by the end of the term.@
+Deposit calculator is a calculator that helps to calculate accumulated savings using the compound interest formula, provided the same monthly replenishment of the account.

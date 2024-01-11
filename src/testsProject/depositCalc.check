@@ -1,8 +1,8 @@
 #test depositEndlyTest
     double profit, taxes, amount;
-    calculateDeposit(15000, 3, 2.3, 0, 1, 0, NULL, 0, 2021, 3, 23, &profit, &taxes, &amount);
-    ck_assert_int_eq(profit, 86);
-    ck_assert_double_eq_tol(amount, 15000, 1e-2);
+    calculateDeposit(19781234, 3, 2.3, 0, 1, 0, NULL, 0, 2020, 3, 31, &profit, &taxes, &amount);
+    ck_assert_int_eq(profit, 114363);
+    ck_assert_double_eq(amount, 19781234);
     ck_assert_double_eq_tol(taxes, 0, 1e-2);
 
 #test depositMonthlyTest

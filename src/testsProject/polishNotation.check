@@ -1,24 +1,24 @@
 #test postfixSimpleTest_1
     char postfix[1000];
-    int error = infixToPostfix("sin(cos(67.235^0.24%12.23))", postfix);
+    int error = infixToPostfix("2^2^3", postfix);
     ck_assert_int_eq(error, 0);
     double result;
     error = processPostfix(postfix, NAN, &result);
     ck_assert_int_eq(error, 0);
-    ck_assert_double_eq_tol(result, sin(cos(fmod(pow(67.235, 0.24), 12.23))), 1e-7);
+    ck_assert_double_eq_tol(result, 256, 1e-7);
 
 #test postfixSimpleTest_2
     char postfix[1000];
-    int error = infixToPostfix("23+(5*4)-13^3", postfix);
+    int error = infixToPostfix("98+((9-11)*4)-2^3", postfix);
     ck_assert_int_eq(error, 0);
     double result;
     error = processPostfix(postfix, NAN, &result);
     ck_assert_int_eq(error, 0);
-    ck_assert_double_eq(result, -2154);
+    ck_assert_double_eq(result, 82);
 
 #test postfixErrorTest_1
     char postfix[1000];
-    int error = infixToPostfix("23^4)", postfix);
+    int error = infixToPostfix("31^3)", postfix);
     ck_assert_int_eq(error, 1);
     
 #test postfixErrorTest_2
@@ -28,7 +28,7 @@
 
 #test postfixErrorTest_3
     char postfix[1000];
-    int error = infixToPostfix("maximins(x)", postfix);
+    int error = infixToPostfix("testtextf(x)", postfix);
     ck_assert_int_eq(error, 1);
 
 #test postfixErrorTest_4
@@ -61,42 +61,42 @@
 
 #test postfixErrorTest_8
     char postfix[1000];
-    int error = infixToPostfix("+++", postfix);
+    int error = infixToPostfix("+++---", postfix);
     double result;
     error = processPostfix(postfix, NAN, &result);
     ck_assert_int_eq(error, 1);
 
 #test postfixErrorTest_9
     char postfix[1000];
-    int error = infixToPostfix("8889.23 -", postfix);
+    int error = infixToPostfix("3672.33 -", postfix);
     double result;
     error = processPostfix(postfix, NAN, &result);
     ck_assert_int_eq(error, 1);
 
 #test postfixErrorTest_10
     char postfix[1000];
-    int error = infixToPostfix("2 +", postfix);
+    int error = infixToPostfix("19 +", postfix);
     double result;
     error = processPostfix(postfix, NAN, &result);
     ck_assert_int_eq(error, 1);
 
 #test postfixErrorTest_11
     char postfix[1000];
-    int error = infixToPostfix("33.02 *", postfix);
+    int error = infixToPostfix("367263.345 *", postfix);
     double result;
     error = processPostfix(postfix, NAN, &result);
     ck_assert_int_eq(error, 1);
 
 #test postfixErrorTest_12
     char postfix[1000];
-    int error = infixToPostfix("90 /", postfix);
+    int error = infixToPostfix("777 /", postfix);
     double result;
     error = processPostfix(postfix, NAN, &result);
     ck_assert_int_eq(error, 1);
     
 #test postfixErrorTest_13
     char postfix[1000];
-    int error = infixToPostfix("98 %", postfix);
+    int error = infixToPostfix("1998 %", postfix);
     double result;
     error = processPostfix(postfix, NAN, &result);
     ck_assert_int_eq(error, 1);
@@ -110,14 +110,14 @@
 
 #test postfixErrorTest_15
     char postfix[1000];
-    int error = infixToPostfix("1978 ^", postfix);
+    int error = infixToPostfix("2004 ^", postfix);
     double result;
     error = processPostfix(postfix, NAN, &result);
     ck_assert_int_eq(error, 1);
 
 #test postfixComplexTest
     char postfix[1000];
-    int error = infixToPostfix("-cos((-cos(x)+sin(x)+tan(x))*acos(0.33)-sqrt(4.2465)/log(2334.24)+ln(23.34)+atan(35.5452)-asin(0.2)--12%2++12.25)--12.23345", postfix);
+    int error = infixToPostfix("-sin((-cos(x)+tan(x))*acos(0.5)-sqrt(0.2465)/log(13.24)+ln(123.34)+atan(915.5452)-asin(0.1)--2%12++90.25)--12.23345", postfix);
     ck_assert_int_eq(error, 0);
     double result;
     error = processPostfix(postfix, 0.27, &result);
