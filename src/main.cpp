@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
         }
     }
 
-    a.setWindowIcon(QIcon(":/new/prefix1/calculator.png"));
+    a.setWindowIcon(QIcon(":/new/icon/calculator_icon.ico"));
 
     smartCalc w;
     setlocale(LC_NUMERIC, "C");

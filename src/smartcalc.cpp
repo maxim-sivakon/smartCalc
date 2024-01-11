@@ -73,21 +73,31 @@ void smartCalc::closeProgram(){
 }
 
 void smartCalc::openBaseCalc(){
-    ui->statusBar->showMessage("open Base Calc");
+    //ui->statusBar->showMessage("open Base Calc");
 }
 
 void smartCalc::openDepositCalc(){
-    ui->statusBar->showMessage("open Deposit Calc");
+    depositcalc *depositcalcW = new depositcalc;
+    depositcalcW->setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint | Qt::WindowSystemMenuHint);
+    depositcalcW->setFixedSize(653, 479);
+    depositcalcW->show();
+    depositcalcW->activateWindow();
 }
 
 void smartCalc::openCreditCalc(){
-    ui->statusBar->showMessage("open Credit Calc");
+    creditcalc *creditcalcW = new creditcalc;
+    creditcalcW->setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint | Qt::WindowSystemMenuHint);
+    creditcalcW->setFixedSize(428, 448);
+    creditcalcW->show();
+    creditcalcW->activateWindow();
 }
 
 void smartCalc::openGraphCalc(){
-    graphcalc graphcalc;
-    graphcalc.setModal(true);
-    graphcalc.exec();
+    graphcalc *graphcalcW = new graphcalc;
+    graphcalcW->setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint | Qt::WindowSystemMenuHint);
+    graphcalcW->setFixedSize(669, 571);
+    graphcalcW->show();
+    graphcalcW->activateWindow();
 }
 
 void smartCalc::takeSymbols(){

@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include <graphcalc.h>
+#include <creditcalc.h>
+#include <depositcalc.h>
 
 extern "C" {
     #include "lib/polishNotation.h"

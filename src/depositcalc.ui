@@ -6,13 +6,525 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>653</width>
+    <height>479</height>
    </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>653</width>
+    <height>479</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Депозитный калькулятор SmartCalc v1.0</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background: #F7F8FB;</string>
+  </property>
+  <widget class="QLabel" name="label_deposit_amount_result">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>380</y>
+     <width>631</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>Сумма вклада в конце срока:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_taxes">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>400</y>
+     <width>631</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>Налог:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_profit">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>360</y>
+     <width>631</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>Прибыль:</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_calculate">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>430</y>
+     <width>651</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+background: #ffffff;
+color: #7CC9FF;
+border-radius: 16px;
+font-size: 18px;
+font-weight: 600;
+}
+
+QPushButton::hover{
+	background: #FCFCFC;
+}
+
+QPushButton:pressed{
+	background: #EFF7FF;
+}</string>
+   </property>
+   <property name="text">
+    <string>Вычислить</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_interest_rate">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>70</y>
+     <width>181</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Процентная ставка:</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox_interest_capitalization">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>310</y>
+     <width>381</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Капитализация процентов</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_start_deposit">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>230</y>
+     <width>381</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Начальный депозит:</string>
+   </property>
+  </widget>
+  <widget class="QDateEdit" name="dateEdit_start_deposit">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>260</y>
+     <width>391</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">	QDateEdit{
+     background: #ffffff;
+     border: 2px solid #F7F8FB;
+     color: #424242;
+     border-radius: 16px;
+     font-size: 18px;
+     font-weight: 600;
+     padding-left: 15px;
+     padding-right: 15px;
+     }
+     QDateEdit::hover{
+     background: #FCFCFE;
+     }
+     QDateEdit:pressed{
+     background: #EFF7FF;
+     }    </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_tax_rate">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>70</y>
+     <width>181</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Налоговая ставка:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_term">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>0</y>
+     <width>181</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Срок (месяцы):</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_interest_rate">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>100</y>
+     <width>191</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">     QLineEdit{
+     background: #ffffff;
+     border: 2px solid #F7F8FB;
+     color: #424242;
+     border-radius: 16px;
+     font-size: 26px;
+     font-weight: 600;
+     padding-left: 15px;
+     padding-right: 15px;
+     }
+     QLineEdit::hover{
+     background: #FCFCFE;
+     }
+     QLineEdit:pressed{
+     background: #EFF7FF;
+     }</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_payment_frequency">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>150</y>
+     <width>381</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Частота платежей:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_deposit_amount">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>30</y>
+     <width>191</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">     QLineEdit{
+     background: #ffffff;
+     border: 2px solid #F7F8FB;
+     color: #424242;
+     border-radius: 16px;
+     font-size: 26px;
+     font-weight: 600;
+     padding-left: 15px;
+     padding-right: 15px;
+     }
+     QLineEdit::hover{
+     background: #FCFCFE;
+     }
+     QLineEdit:pressed{
+     background: #EFF7FF;
+     }</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox_payment_frequency">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>180</y>
+     <width>391</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">	QComboBox{
+     background: #ffffff;
+     border: 2px solid #F7F8FB;
+     color: #424242;
+     border-radius: 16px;
+     font-size: 26px;
+     font-weight: 600;
+     padding-left: 15px;
+     padding-right: 15px;
+     }
+     QComboBox::hover{
+     background: #FCFCFE;
+     }
+     QComboBox:pressed{
+     background: #EFF7FF;
+     }    </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_depost_amount">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>0</y>
+     <width>181</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Сумма депозита:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_tax_rate">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>100</y>
+     <width>191</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">     QLineEdit{
+     background: #ffffff;
+     border: 2px solid #F7F8FB;
+     color: #424242;
+     border-radius: 16px;
+     font-size: 26px;
+     font-weight: 600;
+     padding-left: 15px;
+     padding-right: 15px;
+     }
+     QLineEdit::hover{
+     background: #FCFCFE;
+     }
+     QLineEdit:pressed{
+     background: #EFF7FF;
+     }</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_term">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>30</y>
+     <width>191</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">     QLineEdit{
+     background: #ffffff;
+     border: 2px solid #F7F8FB;
+     color: #424242;
+     border-radius: 16px;
+     font-size: 26px;
+     font-weight: 600;
+     padding-left: 15px;
+     padding-right: 15px;
+     }
+     QLineEdit::hover{
+     background: #FCFCFE;
+     }
+     QLineEdit:pressed{
+     background: #EFF7FF;
+     }</string>
+   </property>
+  </widget>
+  <widget class="Line" name="line_2">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>10</y>
+     <width>20</width>
+     <height>341</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox_changes">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>220</y>
+     <width>221</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">	QComboBox{
+     background: #ffffff;
+     border: 2px solid #F7F8FB;
+     color: #424242;
+     border-radius: 16px;
+     font-size: 26px;
+     font-weight: 600;
+     padding-left: 15px;
+     padding-right: 15px;
+     }
+     QComboBox::hover{
+     background: #FCFCFE;
+     }
+     QComboBox:pressed{
+     background: #EFF7FF;
+     }    </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_date_change">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>90</y>
+     <width>51</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Дата:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_change_amount">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>20</y>
+     <width>51</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Сумма:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_change_amount">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>50</y>
+     <width>221</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">     QLineEdit{
+     background: #ffffff;
+     border: 2px solid #F7F8FB;
+     color: #424242;
+     border-radius: 16px;
+     font-size: 26px;
+     font-weight: 600;
+     padding-left: 15px;
+     padding-right: 15px;
+     }
+     QLineEdit::hover{
+     background: #FCFCFE;
+     }
+     QLineEdit:pressed{
+     background: #EFF7FF;
+     }</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_add_change">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>170</y>
+     <width>221</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+background: #ffffff;
+color: #7CC9FF;
+border-radius: 16px;
+font-size: 18px;
+font-weight: 600;
+}
+
+QPushButton::hover{
+	background: #FCFCFC;
+}
+
+QPushButton:pressed{
+	background: #EFF7FF;
+}</string>
+   </property>
+   <property name="text">
+    <string>Добавить</string>
+   </property>
+  </widget>
+  <widget class="QDateEdit" name="dateEdit_date_change">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>120</y>
+     <width>221</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">	QDateEdit{
+     background: #ffffff;
+     border: 2px solid #F7F8FB;
+     color: #424242;
+     border-radius: 16px;
+     font-size: 18px;
+     font-weight: 600;
+     padding-left: 15px;
+     padding-right: 15px;
+     }
+     QDateEdit::hover{
+     background: #FCFCFE;
+     }
+     QDateEdit:pressed{
+     background: #EFF7FF;
+     }    </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_replenishments_and_withdrawals">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>0</y>
+     <width>207</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Пополнения и снятие средств:</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
