@@ -1,0 +1,126 @@
+#test postfix_simple_test_1
+    char postfix[1000];
+    int error = infix_to_postfix("23+(5*4)-13^3", postfix);
+    ck_assert_int_eq(error, 0);
+    double result;
+    error = process_postfix(postfix, NAN, &result);
+    ck_assert_int_eq(error, 0);
+    ck_assert_double_eq(result, -2154);
+
+#test postfix_simple_test_2
+    char postfix[1000];
+    int error = infix_to_postfix("sin(cos(67.235^0.24%12.23))", postfix);
+    ck_assert_int_eq(error, 0);
+    double result;
+    error = process_postfix(postfix, NAN, &result);
+    ck_assert_int_eq(error, 0);
+    ck_assert_double_eq_tol(result, sin(cos(fmod(pow(67.235, 0.24), 12.23))), 1e-7);
+    
+#test postfix_error_test_1
+    char postfix[1000];
+    int error = infix_to_postfix("maximins(x)", postfix);
+    ck_assert_int_eq(error, 1);
+    
+#test postfix_error_test_2
+    char postfix[1000];
+    int error = infix_to_postfix("sin((2.3", postfix);
+    ck_assert_int_eq(error, 1);
+
+#test postfix_error_test_3
+    char postfix[1000];
+    int error = infix_to_postfix("23^4)", postfix);
+    ck_assert_int_eq(error, 1);
+
+#test postfix_error_test_4
+    char postfix[1000];
+    int error = infix_to_postfix("sin + tan", postfix);
+    double result;
+    error = process_postfix(postfix, NAN, &result);
+    ck_assert_int_eq(error, 1);
+
+#test postfix_error_test_5
+    char postfix[1000];
+    int error = infix_to_postfix("sin(x)", postfix);
+    double result;
+    error = process_postfix(postfix, NAN, &result);
+    ck_assert_int_eq(error, 1);
+
+#test postfix_error_test_6
+    char postfix[1000];
+    int error = infix_to_postfix("23$3", postfix);
+    double result;
+    error = process_postfix(postfix, NAN, &result);
+    ck_assert_int_eq(error, 1);
+
+#test postfix_error_test_7
+    char postfix[1000];
+    int error = infix_to_postfix("---", postfix);
+    double result;
+    error = process_postfix(postfix, NAN, &result);
+    ck_assert_int_eq(error, 1);
+
+#test postfix_error_test_8
+    char postfix[1000];
+    int error = infix_to_postfix("+++", postfix);
+    double result;
+    error = process_postfix(postfix, NAN, &result);
+    ck_assert_int_eq(error, 1);
+
+#test postfix_error_test_9
+    char postfix[1000];
+    int error = infix_to_postfix("2 +", postfix);
+    double result;
+    error = process_postfix(postfix, NAN, &result);
+    ck_assert_int_eq(error, 1);
+
+#test postfix_error_test_10
+    char postfix[1000];
+    int error = infix_to_postfix("8889.23 -", postfix);
+    double result;
+    error = process_postfix(postfix, NAN, &result);
+    ck_assert_int_eq(error, 1);
+
+#test postfix_error_test_11
+    char postfix[1000];
+    int error = infix_to_postfix("33.02 *", postfix);
+    double result;
+    error = process_postfix(postfix, NAN, &result);
+    ck_assert_int_eq(error, 1);
+
+#test postfix_error_test_12
+    char postfix[1000];
+    int error = infix_to_postfix("90 /", postfix);
+    double result;
+    error = process_postfix(postfix, NAN, &result);
+    ck_assert_int_eq(error, 1);
+    
+#test postfix_error_test_13
+    char postfix[1000];
+    int error = infix_to_postfix("98 %", postfix);
+    double result;
+    error = process_postfix(postfix, NAN, &result);
+    ck_assert_int_eq(error, 1);
+
+#test postfix_error_test_14
+    char postfix[1000];
+    int error = infix_to_postfix("1978 ^", postfix);
+    double result;
+    error = process_postfix(postfix, NAN, &result);
+    ck_assert_int_eq(error, 1);
+
+#test postfix_error_test_15
+    char postfix[1000];
+    int error = infix_to_postfix("^", postfix);
+    double result;
+    error = process_postfix(postfix, NAN, &result);
+    ck_assert_int_eq(error, 1);
+    
+
+#test postfix_complex_test
+    char postfix[1000];
+    int error = infix_to_postfix("-cos((-cos(x)+sin(x)+tan(x))*acos(0.33)-sqrt(4.2465)/log(2334.24)+ln(23.34)+atan(35.5452)-asin(0.2)--12%2++12.25)--12.23345", postfix);
+    ck_assert_int_eq(error, 0);
+    double result;
+    error = process_postfix(postfix, 0.27, &result);
+    ck_assert_int_eq(error, 0);
+    ck_assert_double_eq(result, result);

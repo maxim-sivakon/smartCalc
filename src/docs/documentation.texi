@@ -1,0 +1,97 @@
+\input texinfo
+@comment %**start of header
+@settitle SmartCalc v1.0 User's Manual
+@comment %**end of header
+
+@ifinfo
+@copying
+Copyright © 2023 maximins
+@end ifinfo
+
+@titlepage
+@title SmartCalc v1.0 User's Manual
+@end titlepage
+
+@node Top
+@top SmartCalc
+
+@menu
+* General usage::
+* Calculation of bracketed arithmetic expressions::
+* Graphs::
+* Credit calculator::
+* Deposit calculator::
+@end menu
+
+@node General usage
+@chapter General usage
+
+@strong{The SmartCalc v1.0 program help you with:}@*
+
+- Calculating arbitrary bracketed arithmetic expressions in infix notation@*
+- Calculating arbitrary bracketed arithmetic expressions in infix notation with substitution of the value of the variable x as a number@*
+- Plotting a graph of a function given by an expression in infix notation with the variable x@*
+- Calculating credits and deposits@*
+
+
+@node Calculation of bracketed arithmetic expressions
+@chapter Calculation of bracketed arithmetic expressions
+
+@strong{The SmartCalc v1.0 program supports:}@*
+
+Calculation of bracketed arithmetic expressions with operations:@*
+1) addition (+)@*
+2) subtraction(-)@*
+3) multiplication(*)@*
+4) division(/)@*
+5) power(^)@*
+6) modulus(%)@*
+7) unary plus(+)@*
+8) unary minus(-)@*
+
+and functions:@*
+1) Computes cosine cos(x)@*
+2) Computes sine sin(x)@*
+3) Computes tangent tan(x)@*
+4) Computes arc cosine acos(x)@*
+5) Computes arc sine asin(x)@*
+6) Computes arc tangent atan(x)@*
+7) Computes square root sqrt(x)@*
+8)Computes natural logarithm ln(x)@*
+9)Computes common logarithm log(x)@*
+
+
+@node Graphs
+@chapter Graphs
+
+Program is plotting a graph of a function given by an expression in infix notation with the variable x (with coordinate axes, mark of the used scale and an adaptive grid)@*
+You just need to input the expression with x and limits for x and y variables@*
+After you input expression and limits on the main page you can change values on the graph page
+
+
+@node Credit calculator
+@chapter Credit calculator
+
+You just need to input:@*
+1) total credit amount@*
+2) term@*
+3) interest rate@*
+4) type (annuity, differentiated)@*
+
+And you will have the result output: monthly payment, overpayment on credit, total payment
+
+
+@node Deposit calculator
+@chapter Deposit calculator
+
+You just need to input:@*
+1) deposit amount@*
+2) deposit term@*
+3) interest rate@*
+4) tax rate@*
+5) periodicity of payments@*
+6) capitalization of interest@*
+7) replenishments and partial withdrawals list@*
+7) start date@*
+
+And you will have the result output: accrued interest, tax amount, deposit amount by the end of the term

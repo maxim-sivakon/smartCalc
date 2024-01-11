@@ -3,6 +3,10 @@
 
 #include <QWidget>
 
+extern "C" {
+#include "lib/creditCalcLib.h"
+}
+
 namespace Ui {
 class creditcalc;
 }
@@ -14,6 +18,9 @@ class creditcalc : public QWidget
 public:
     explicit creditcalc(QWidget *parent = nullptr);
     ~creditcalc();
+
+private slots:
+    void calculateCredit();
 
 private:
     Ui::creditcalc *ui;

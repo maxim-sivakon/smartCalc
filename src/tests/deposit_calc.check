@@ -1,0 +1,30 @@
+#test deposit_monthly_test
+    change replenishments_and_withdrawals[] = {{-12000, {12, 1, 2024}},{-850.345, {17, 1, 2024}}, {-434.32, {8, 2, 2024}}, {23000.12, {15, 1, 2024}}, {7000, {23, 3, 2024}}, {200000.99, {6, 4, 2024}}}; 
+    int changes_num = sizeof(replenishments_and_withdrawals)/sizeof(replenishments_and_withdrawals[0]);
+    double profit, taxes, amount;
+    calculate_deposit(120000, 14, 15.55, 0, 0, 0, replenishments_and_withdrawals, changes_num, 2023, 12, 24, &profit, &taxes, &amount);
+    ck_assert_int_eq(profit/100, 520);
+    ck_assert_double_eq_tol(amount, 336716.45, 1e-2);
+    ck_assert_double_eq_tol(taxes, 0, 1e-2);
+
+#test deposit_daily_test
+    double profit, taxes, amount;
+    calculate_deposit(2500000, 5, 12.5, 0, 2, 0, NULL, 0, 2024, 1, 1, &profit, &taxes, &amount);
+    ck_assert_int_eq(profit/10, 12978);
+    ck_assert_double_eq_tol(amount, 2500000, 1e-2);
+    ck_assert_double_eq_tol(taxes, 0, 1e-2);
+
+#test deposit_yearly_test
+    double profit, taxes, amount;
+    calculate_deposit(420000, 23, 10, 13, 3, 1, NULL, 0, 2024, 1, 2, &profit,
+                    &taxes, &amount);
+    ck_assert_int_eq(profit/100, 842);
+    ck_assert_int_eq(amount/100, 5042);
+    ck_assert_double_eq_tol(taxes, 10957.29, 1e-2);
+
+#test deposit_endly_test
+    double profit, taxes, amount;
+    calculate_deposit(15000, 3, 2.3, 0, 1, 0, NULL, 0, 2021, 3, 23, &profit, &taxes, &amount);
+    ck_assert_int_eq(profit, 86);
+    ck_assert_double_eq_tol(amount, 15000, 1e-2);
+    ck_assert_double_eq_tol(taxes, 0, 1e-2);

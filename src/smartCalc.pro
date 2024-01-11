@@ -18,8 +18,8 @@ SOURCES += \
     creditcalc.cpp \
     depositcalc.cpp \
     graphcalc.cpp \
-    lib/creditСalc.c \
-    lib/depositСalc.c \
+    lib/creditCalcLib.c \
+    lib/depositCalcLib.c \
     lib/polishNotation.c \
     lib/qcustomplot.cpp \
     lib/stack.c \
@@ -30,8 +30,8 @@ HEADERS += \
     creditcalc.h \
     depositcalc.h \
     graphcalc.h \
-    lib/creditСalc.h \
-    lib/depositСalc.h \
+    lib/creditCalcLib.h \
+    lib/depositCalcLib.h \
     lib/polishNotation.h \
     lib/qcustomplot.h \
     lib/stack.h \
