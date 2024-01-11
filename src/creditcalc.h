@@ -11,19 +11,18 @@ namespace Ui {
 class creditcalc;
 }
 
-class creditcalc : public QWidget
-{
-    Q_OBJECT
+class creditcalc : public QWidget {
+  Q_OBJECT
 
-public:
-    explicit creditcalc(QWidget *parent = nullptr);
-    ~creditcalc();
+ public:
+  explicit creditcalc(QWidget *parent = nullptr);
+  ~creditcalc();
 
-private slots:
-    void calculateCredit();
+ private slots:
+  void calculateCredit();
 
-private:
-    Ui::creditcalc *ui;
+ private:
+  Ui::creditcalc *ui;
 };
 
-#endif // CREDITCALC_H
+#endif  // CREDITCALC_H

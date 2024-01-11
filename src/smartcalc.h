@@ -1,14 +1,15 @@
 #ifndef SMARTCALC_H
 #define SMARTCALC_H
 
-#include <QMainWindow>
-#include <graphcalc.h>
 #include <creditcalc.h>
 #include <depositcalc.h>
+#include <graphcalc.h>
+
+#include <QMainWindow>
 
 extern "C" {
-    #include "lib/polishNotation.h"
-    #include "lib/stack.h"
+#include "lib/polishNotation.h"
+#include "lib/stack.h"
 }
 
 QT_BEGIN_NAMESPACE
@@ -17,31 +18,30 @@ class smartCalc;
 }
 QT_END_NAMESPACE
 
-class smartCalc : public QMainWindow
-{
-    Q_OBJECT
+class smartCalc : public QMainWindow {
+  Q_OBJECT
 
-public:
-    smartCalc(QWidget *parent = nullptr);
-    ~smartCalc();
+ public:
+  smartCalc(QWidget *parent = nullptr);
+  ~smartCalc();
 
-private:
-    Ui::smartCalc *ui;
+ private:
+  Ui::smartCalc *ui;
 
-private slots:
-    void clickedBtnDot();
-    void clickedBtnClearAll();
-    void clickedBtnPi();
-    void clickedBtnClearLastChar();
-    void trigonometricFunctions();
-    void takeSymbols();
-    void equalls();
+ private slots:
+  void clickedBtnDot();
+  void clickedBtnClearAll();
+  void clickedBtnPi();
+  void clickedBtnClearLastChar();
+  void trigonometricFunctions();
+  void takeSymbols();
+  void equalls();
 
-    // top menu contecst
-    void closeProgram();
-    void openBaseCalc();
-    void openDepositCalc();
-    void openCreditCalc();
-    void openGraphCalc();
+  // top menu contecst
+  void closeProgram();
+  void openBaseCalc();
+  void openDepositCalc();
+  void openCreditCalc();
+  void openGraphCalc();
 };
-#endif // SMARTCALC_H
+#endif  // SMARTCALC_H

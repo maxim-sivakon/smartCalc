@@ -1,0 +1,7 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include "lib/stack.h"
+#include "lib/polishNotation.h"
+#include "lib/creditCalcLib.h"
+#include "lib/depositCalcLib.h"

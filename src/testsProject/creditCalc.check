@@ -1,0 +1,27 @@
+#test credit_test_annuity
+    double total_loan = 1234898.98;
+    int term = 57;
+    double interest_rate = 17.354;
+    double annuity_payment = calculateAnnuityPayment(total_loan, term, interest_rate);
+    double annuity_total_payment = calculateAnnuityTotalPayment(total_loan, term, interest_rate);
+    double annuity_overpayment = calculateLoanOverpayment(total_loan, annuity_total_payment);
+    ck_assert_double_eq_tol(annuity_payment, 31955.12, 1e-2);
+    ck_assert_double_eq_tol(annuity_total_payment, 1821441.84, 1e-2);
+    ck_assert_double_eq_tol(annuity_overpayment, 586542.86, 1e-2);
+
+#test credit_test_differentiated
+    double total_loan = 317973.23;
+    int term = 4;
+    double interest_rate = 9.25;
+    double differentiated_payment1 = calculateDifferentiatedPayment(total_loan, term, interest_rate, 1);
+    double differentiated_payment2 = calculateDifferentiatedPayment(total_loan, term, interest_rate, 2);
+    double differentiated_payment3 = calculateDifferentiatedPayment(total_loan, term, interest_rate, 3);
+    double differentiated_payment4 = calculateDifferentiatedPayment(total_loan, term, interest_rate, 4);
+    double differentiated_total_payment = calculateDifferentiatedTotalPayment(total_loan, term, interest_rate);
+    double differentiated_overpayment = calculateLoanOverpayment(total_loan, differentiated_total_payment);
+    ck_assert_double_eq_tol(differentiated_payment1, 81944.35, 1e-2);
+    ck_assert_double_eq_tol(differentiated_payment2, 81331.59, 1e-2);
+    ck_assert_double_eq_tol(differentiated_payment3, 80718.83, 1e-2);
+    ck_assert_double_eq_tol(differentiated_payment4, 80106.07, 1e-2);
+    ck_assert_double_eq_tol(differentiated_total_payment, 324100.84, 1e-2);
+    ck_assert_double_eq_tol(differentiated_overpayment, 6127.61, 1e-2);

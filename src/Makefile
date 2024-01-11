@@ -45,11 +45,11 @@ gcov_report: check
 	$(OPEN)
 
 test: stack.o polishNotation.o creditCalcLib.o depositCalcLib.o test.o
-	$(CC) test.o stack.o polishNotation.o creditCalc.o depositCalc.o -o $(EXECUTABLE) $(TEST_FLAGS)
+	$(CC) test.o stack.o polishNotation.o creditCalcLib.o depositCalcLib.o -o $(EXECUTABLE) $(TEST_FLAGS)
 	./$(EXECUTABLE)
 
 check:
-	checkmk clean_mode=1 tests/headers/*.check tests/*.check > $(TEST_FILE)
+	checkmk clean_mode=1 testsProject/headers/*.check testsProject/*.check > $(TEST_FILE)
 	cp -f ../materials/linters/.clang-format ./.clang-format
 	clang-format -i *.c *.h
 	rm .clang-format
