@@ -7,7 +7,7 @@ creditcalc::creditcalc(QWidget *parent)
 {
     ui->setupUi(this);
 
-    connect(ui->pushButton_calculate, SIGNAL(clicked()), this, SLOT(calculateСredit()));
+    connect(ui->pushButton_calculate, SIGNAL(clicked()), this, SLOT(calculateCredit()));
 }
 
 creditcalc::~creditcalc()

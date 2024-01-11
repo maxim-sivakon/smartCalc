@@ -4,8 +4,8 @@ extern "C" {
 
 #include <math.h>
 
-#ifndef CREDITСALC_H
-#define CREDITСALC_H
+#ifndef CREDITCALC_H
+#define CREDITCALC_H
 
 double calculateAnnuityPayment(double totalLoan, int term, double interestRate);
 
@@ -17,7 +17,7 @@ double calculateDifferentiatedTotalPayment(double totalLoan, int term, double in
 
 double calculateLoanOverpayment(double totalLoan, double totalPayment);
 
-#endif // CREDITСALC_H
+#endif // CREDITCALC_H
 
 #ifdef __cplusplus
 }

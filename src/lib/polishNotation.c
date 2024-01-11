@@ -142,7 +142,7 @@ int infixToPostfix(const char *expression, char *postfix_expression) {
                      (getPriority(stack.data[stack.top]) ==
                       getPriority(expression[i]) &&
                       !(unary_allowed &&
-                        (expression[i] == '-' || expression[i] == '+'))))) {
+                        (expression[i] == '-' || expression[i] == '+')) && expression[i] != '^'))) {
                 char lexem = popChar(&stack);
                 postfix_expression[j++] = lexem;
                 postfix_expression[j++] = ' ';
