@@ -20,7 +20,7 @@ all: clean test install
 
 install: clean
 	mkdir build
-	cd SmartCalc && qmake && make && make clean && rm Makefile && rm .qmake.stash && mv SmartCalc.app ../build/
+	qmake && make && make clean && rm Makefile && rm .qmake.stash && mv smartcalc.app build/
 
 uninstall:
 	rm -rf build
@@ -28,7 +28,7 @@ uninstall:
 dist:
 	rm -rf Archive_calc_v1.0/
 	mkdir Archive_calc_v1.0/
-	cp -r ./build/SmartCalc.app Archive_calc_v1.0
+	cp -r ./build/smartcalc.app Archive_calc_v1.0
 	tar cvzf Archive_calc_v1.0.tgz Archive_calc_v1.0/
 	rm -rf Archive_calc_v1.0/
 
@@ -57,13 +57,13 @@ check:
 stack.o: lib/stack.c
 	$(CC) $(CFLAGS) lib/stack.c -o stack.o
 
-polish_notation.o: lib/polishNotation.c
+polishNotation.o: lib/polishNotation.c
 	$(CC) $(CFLAGS) lib/polishNotation.c -o polishNotation.o
 
-credit_calc.o: lib/creditCalcLib.c
+creditCalcLib.o: lib/creditCalcLib.c
 	$(CC) $(CFLAGS) lib/creditCalcLib.c -o creditCalcLib.o
 
-deposit_calc.o: lib/depositCalcLib.c
+depositCalcLib.o: lib/depositCalcLib.c
 	$(CC) $(CFLAGS) lib/depositCalcLib.c -o depositCalcLib.o
 
 test.o: check
