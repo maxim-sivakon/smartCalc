@@ -1,9 +1,9 @@
 #ifndef DEPOSITCALC_H
 #define DEPOSITCALC_H
 
-#include <QWidget>
 #include <QList>
 #include <QVariant>
+#include <QWidget>
 
 extern "C" {
 #include "lib/depositCalcLib.h"
