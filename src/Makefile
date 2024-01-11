@@ -33,8 +33,8 @@ dist:
 	rm -rf Archive_calc_v1.0/
 
 dvi: 
-	makeinfo --html documentation.texi 
-	open ./documentation/index.html
+	makeinfo --html docs/documentation.texi
+	open ./documentation_html/index.html
 
 gcov_report: check
 	mkdir -p $(GCOV_DIR)
