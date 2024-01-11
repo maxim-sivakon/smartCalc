@@ -208,7 +208,7 @@ QPushButton:pressed{
      border: 2px solid #F7F8FB;
      color: #424242;
      border-radius: 16px;
-     font-size: 26px;
+     font-size: 18px;
      font-weight: 600;
      padding-left: 15px;
      padding-right: 15px;
@@ -249,7 +249,7 @@ QPushButton:pressed{
      border: 2px solid #F7F8FB;
      color: #424242;
      border-radius: 16px;
-     font-size: 26px;
+     font-size: 18px;
      font-weight: 600;
      padding-left: 15px;
      padding-right: 15px;
@@ -277,7 +277,7 @@ QPushButton:pressed{
      border: 2px solid #F7F8FB;
      color: #424242;
      border-radius: 16px;
-     font-size: 26px;
+     font-size: 18px;
      font-weight: 600;
      padding-left: 15px;
      padding-right: 15px;
@@ -318,7 +318,7 @@ QPushButton:pressed{
      border: 2px solid #F7F8FB;
      color: #424242;
      border-radius: 16px;
-     font-size: 26px;
+     font-size: 18px;
      font-weight: 600;
      padding-left: 15px;
      padding-right: 15px;
@@ -346,7 +346,7 @@ QPushButton:pressed{
      border: 2px solid #F7F8FB;
      color: #424242;
      border-radius: 16px;
-     font-size: 26px;
+     font-size: 18px;
      font-weight: 600;
      padding-left: 15px;
      padding-right: 15px;
@@ -387,7 +387,7 @@ QPushButton:pressed{
      border: 2px solid #F7F8FB;
      color: #424242;
      border-radius: 16px;
-     font-size: 26px;
+     font-size: 18px;
      font-weight: 600;
      padding-left: 15px;
      padding-right: 15px;
@@ -441,7 +441,7 @@ QPushButton:pressed{
      border: 2px solid #F7F8FB;
      color: #424242;
      border-radius: 16px;
-     font-size: 26px;
+     font-size: 18px;
      font-weight: 600;
      padding-left: 15px;
      padding-right: 15px;

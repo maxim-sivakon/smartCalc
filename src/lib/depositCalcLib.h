@@ -5,9 +5,6 @@ extern "C" {
 #include <math.h>
 #include <stdio.h>
 
-#ifndef DEPOSITCALC_H
-#define DEPOSITCALC_H
-
 typedef struct {
     int day;
     int month;
@@ -30,8 +27,6 @@ int monthDays(date thisDate);
 void normalizeDate(date *thisDate);
 
 void endOfPeriod(int interestCapitalization, double *totalAmount, double *totalProfit, double *currentProfit);
-
-#endif // DEPOSITCALC_H
 
 #ifdef __cplusplus
 }

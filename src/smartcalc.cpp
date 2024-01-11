@@ -1,4 +1,6 @@
 #include "smartcalc.h"
+#include "depositcalc.h"
+#include "creditcalc.h"
 #include "ui_smartcalc.h"
 #include <QApplication>
 #include <QLocale>

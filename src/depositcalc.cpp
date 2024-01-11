@@ -8,13 +8,13 @@ depositcalc::depositcalc(QWidget *parent)
     ui->setupUi(this);
 
     connect(ui->pushButton_calculate, SIGNAL(clicked()), this,
-            SLOT(calculateDeposit_values()));
+            SLOT(calculateDepositValues()));
     connect(ui->pushButton_add_change, SIGNAL(clicked()), this,
             SLOT(addChange()));
-    ui->comboBox_payment_frequency->addItem("once a month");
-    ui->comboBox_payment_frequency->addItem("in the end of term");
-    ui->comboBox_payment_frequency->addItem("every day");
-    ui->comboBox_payment_frequency->addItem("once a year");
+    ui->comboBox_payment_frequency->addItem("раз в месяц");
+    ui->comboBox_payment_frequency->addItem("в конце периода");
+    ui->comboBox_payment_frequency->addItem("каждый день");
+    ui->comboBox_payment_frequency->addItem("раз в год");
     list_changes = QList<change>();
 
 }
